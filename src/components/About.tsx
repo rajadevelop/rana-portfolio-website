@@ -66,27 +66,6 @@ export default function About() {
             ))}
           </div>
 
-          {/* Profile Image Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="md:col-span-4 lg:col-span-6 glass-card p-4 rounded-[2.5rem] overflow-hidden group"
-          >
-            <div className="relative h-64 md:h-96 w-full rounded-[2rem] overflow-hidden">
-              <img
-                src="https://picsum.photos/seed/rana-dev/1200/600"
-                alt="Rana Das"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-[#000a1a] via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-8 left-8">
-                <div className="text-4xl font-black tracking-tighter">BASED IN INDIA</div>
-                <div className="text-slate-400 font-medium">Working Remotely Worldwide</div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
