@@ -1,0 +1,94 @@
+import { motion } from "motion/react";
+import { FaRocket, FaCode, FaPalette, FaUsers } from "react-icons/fa";
+
+export default function About() {
+  const stats = [
+    { icon: <FaRocket />, label: "Experience", value: "6+ Years", color: "from-blue-500 to-cyan-500" },
+    { icon: <FaCode />, label: "Projects", value: "50+", color: "from-sky-500 to-cyan-500" },
+    { icon: <FaPalette />, label: "Design", value: "Modern", color: "from-orange-500 to-red-500" },
+    { icon: <FaUsers />, label: "Clients", value: "Global", color: "from-green-500 to-emerald-500" },
+  ];
+
+  return (
+    <section id="about" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
+            THE <span className="gradient-text">STORY</span> BEHIND
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            A blend of creativity and technical expertise to build digital products that matter.
+          </p>
+        </motion.div>
+
+        <div className="bento-grid">
+          {/* Main Bio Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="md:col-span-4 lg:col-span-4 glass-card p-10 rounded-[2.5rem] flex flex-col justify-center"
+          >
+            <h3 className="text-3xl font-bold mb-6">Who is Rana Das?</h3>
+            <p className="text-slate-400 text-lg leading-relaxed mb-6">
+              Innovative Website Designer & Frontend Developer with 6+ years of experience delivering responsive,
+              user-focused, and visually striking websites. Skilled in modern design tools, frontend technologies,
+              and performance optimization.
+            </p>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              Dedicated to creating high-quality digital experiences that strengthen brand identity and drive results.
+              I believe in the power of clean code and pixel-perfect design.
+            </p>
+          </motion.div>
+
+          {/* Stats Grid */}
+          <div className="md:col-span-4 lg:col-span-2 grid grid-cols-2 gap-4">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card p-6 rounded-[2rem] flex flex-col items-center justify-center text-center group"
+              >
+                <div className={`text-2xl mb-3 p-3 rounded-2xl bg-linear-to-br ${stat.color} text-white group-hover:scale-110 transition-transform`}>
+                  {stat.icon}
+                </div>
+                <div className="text-2xl font-black mb-1">{stat.value}</div>
+                <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Profile Image Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="md:col-span-4 lg:col-span-6 glass-card p-4 rounded-[2.5rem] overflow-hidden group"
+          >
+            <div className="relative h-64 md:h-96 w-full rounded-[2rem] overflow-hidden">
+              <img
+                src="https://picsum.photos/seed/rana-dev/1200/600"
+                alt="Rana Das"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-[#000a1a] via-transparent to-transparent opacity-60" />
+              <div className="absolute bottom-8 left-8">
+                <div className="text-4xl font-black tracking-tighter">BASED IN INDIA</div>
+                <div className="text-slate-400 font-medium">Working Remotely Worldwide</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
