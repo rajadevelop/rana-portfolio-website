@@ -10,22 +10,8 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
-            THE <span className="gradient-text">STORY</span> BEHIND
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            A blend of creativity and technical expertise to build digital products that matter.
-          </p>
-        </motion.div>
-
         <div className="bento-grid">
           {/* Main Bio Card */}
           <motion.div
@@ -34,13 +20,17 @@ export default function About() {
             viewport={{ once: true }}
             className="md:col-span-4 lg:col-span-4 glass-card p-10 rounded-[2.5rem] flex flex-col justify-center"
           >
-            <h3 className="text-3xl font-bold mb-6">Who is Rana Das?</h3>
-            <p className="text-slate-400 text-lg leading-relaxed mb-6">
+            <h3 className="text-3xl font-bold mb-6">My Story</h3>
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
               Innovative Website Designer & Frontend Developer with 6+ years of experience delivering responsive,
               user-focused, and visually striking websites. Skilled in modern design tools, frontend technologies,
               and performance optimization.
             </p>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-300 text-lg leading-relaxed mb-6">
+              Dedicated to creating high-quality digital experiences that strengthen brand identity and drive results.
+              I believe in the power of clean code and pixel-perfect design.
+            </p>
+            <p className="text-slate-300 text-lg leading-relaxed">
               Dedicated to creating high-quality digital experiences that strengthen brand identity and drive results.
               I believe in the power of clean code and pixel-perfect design.
             </p>

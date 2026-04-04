@@ -15,11 +15,9 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Disable scrolling during loading
-    document.body.style.overflow = "hidden";
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
