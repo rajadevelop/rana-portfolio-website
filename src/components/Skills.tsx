@@ -51,7 +51,7 @@ export default function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase">
-            Technical <span className="gradient-text">Arsenal</span>
+            Technical <span className="gradient-text">Expertise</span>
           </h2>
         </motion.div>
 
