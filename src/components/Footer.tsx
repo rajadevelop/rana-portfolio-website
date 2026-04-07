@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -19,20 +19,6 @@ export default function Footer() {
               Crafting digital excellence through code and design.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center gap-6"
-          >
-            {[FaGithub, FaLinkedin, FaTwitter].map((Icon, i) => (
-              <a key={i} href="#" className="p-4 rounded-2xl glass text-primary hover:gradient-bg hover:text-white transition-all transform hover:-translate-y-1">
-                <Icon size={24} />
-              </a>
-            ))}
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,9 +27,6 @@ export default function Footer() {
           >
             <p className="text-sm text-slate-500 font-bold uppercase tracking-widest mb-2">
               © {currentYear} Rana Das
-            </p>
-            <p className="flex items-center justify-center md:justify-end gap-2 text-xs text-slate-600">
-              Made with <span className="animate-pulse"><FaHeart color="#00aaff" /></span> in India
             </p>
           </motion.div>
         </div>

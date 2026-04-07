@@ -58,7 +58,7 @@ export default function Contact() {
               className="glass-card p-8 rounded-[2rem] flex justify-around"
             >
               {[FaGithub, FaLinkedin, FaTwitter].map((Icon, i) => (
-                <a key={i} href="#" className="p-4 rounded-2xl bg-white/5 text-primary hover:gradient-bg hover:text-white transition-all transform hover:-translate-y-1">
+                <a key={i} href="https://github.com/dasrana373-commits" className="p-4 rounded-2xl bg-white/5 text-primary hover:gradient-bg hover:text-white transition-all transform hover:-translate-y-1">
                   <Icon size={24} />
                 </a>
               ))}
