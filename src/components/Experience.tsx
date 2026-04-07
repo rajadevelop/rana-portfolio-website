@@ -28,7 +28,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 relative">
+    <section id="experience" className="py-16 relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -10,7 +10,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-16 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="bento-grid">
           {/* Main Bio Card */}
@@ -18,7 +18,7 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="md:col-span-4 lg:col-span-4 glass-card p-10 rounded-[2.5rem] flex flex-col justify-center"
+            className="md:col-span-4 lg:col-span-4 flex flex-col justify-center mr-10"
           >
             <h3 className="text-3xl font-bold mb-6">My Story</h3>
             <p className="text-slate-300 text-lg leading-relaxed mb-6">

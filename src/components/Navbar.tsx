@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 transition-all duration-500 rounded-full border-none ${
+      className={`fixed top-3 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 transition-all duration-500 rounded-full border-none ${
         isScrolled ? "glass py-3" : "bg-transparent py-5"
       }`}
     >
