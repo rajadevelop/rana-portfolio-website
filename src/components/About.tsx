@@ -1,12 +1,13 @@
 import { motion } from "motion/react";
-import { FaRocket, FaCode, FaPalette, FaUsers } from "react-icons/fa";
+import { FaRocket, FaCode, FaPalette } from "react-icons/fa";
+import { FaGear } from "react-icons/fa6";
 
 export default function About() {
   const stats = [
     { icon: <FaRocket />, label: "Experience", value: "6+ Years", color: "from-blue-500 to-cyan-500" },
     { icon: <FaCode />, label: "Projects", value: "50+", color: "from-sky-500 to-cyan-500" },
     { icon: <FaPalette />, label: "Design", value: "Modern", color: "from-orange-500 to-red-500" },
-    { icon: <FaUsers />, label: "Clients", value: "Global", color: "from-green-500 to-emerald-500" },
+    { icon: <FaGear />, label: "Experience", value: "Production", color: "from-green-500 to-emerald-500" },
   ];
 
   return (
@@ -22,17 +23,13 @@ export default function About() {
           >
             <h3 className="text-3xl font-bold mb-6">My Story</h3>
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
-              Innovative Website Designer & Frontend Developer with 6+ years of experience delivering responsive,
-              user-focused, and visually striking websites. Skilled in modern design tools, frontend technologies,
-              and performance optimization.
+              Hi, I’m Rana Das, a Website Designer and Frontend Developer with 6+ years of experience in building responsive, user-friendly, and visually appealing websites. I have worked on real-time, production-level projects where I focus on quality, performance, and smooth user experience.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
-              Dedicated to creating high-quality digital experiences that strengthen brand identity and drive results.
-              I believe in the power of clean code and pixel-perfect design.
+              I have strong knowledge of modern design tools and frontend technologies, and I always try to write clean and maintainable code. I enjoy creating websites that not only look good but also help businesses grow and build a strong online presence.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              Dedicated to creating high-quality digital experiences that strengthen brand identity and drive results.
-              I believe in the power of clean code and pixel-perfect design.
+              I believe in following best practices and paying attention to every detail to deliver reliable, production-ready work.
             </p>
           </motion.div>
 

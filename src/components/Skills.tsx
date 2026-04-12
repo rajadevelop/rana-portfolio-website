@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { FaHtml5, FaCss3Alt, FaJs, FaSass, FaReact, FaWordpress, FaSearch, FaPaintBrush } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaGithub, FaJs, FaSass, FaReact, FaWordpress, FaSearch, FaPaintBrush } from "react-icons/fa";
 import { SiTailwindcss, SiChakraui, SiNextdotjs, SiRedux, SiElementor } from "react-icons/si";
 import { HiOutlineDeviceMobile } from "react-icons/hi";
 
@@ -34,8 +34,9 @@ const skillCategories = [
   {
     title: "Other",
     skills: [
-      { name: "SEO", icon: <FaSearch color="#4caf50" /> },
       { name: "Responsive", icon: <HiOutlineDeviceMobile color="#00aaff" /> },
+      { name: "Github", icon: <FaGithub color="#7e7e7e" /> },
+      { name: "SEO", icon: <FaSearch color="#4caf50" /> },
     ],
   },
 ];
