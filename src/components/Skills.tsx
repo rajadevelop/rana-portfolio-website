@@ -71,13 +71,12 @@ export default function Skills() {
                 {category.skills.map((skill, i) => (
                   <motion.div
                     key={i}
-                    whileHover={{ scale: 1.1, y: -5 }}
-                    className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors group"
+                    className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-white/5 transition-colors group"
                   >
                     <div className="text-4xl group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all">
                       {skill.icon}
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-tighter text-slate-500 group-hover:text-white transition-colors">
+                    <span className="text-xs font-bold uppercase tracking-tighter text-slate-500 transition-colors">
                       {skill.name}
                     </span>
                   </motion.div>

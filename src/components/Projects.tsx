@@ -75,7 +75,7 @@ export default function Projects() {
                   <FaCode size={16} />
                   <span className="text-xs font-bold uppercase tracking-widest">{project.tech[0]}</span>
                 </div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">{project.title}</h3>
+                <h3 className="text-3xl font-bold mb-4 transition-colors">{project.title}</h3>
                 <p className="text-slate-400 mb-8 leading-relaxed">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-8">
@@ -89,15 +89,9 @@ export default function Projects() {
                 <div className="flex gap-4">
                   <a
                     href={project.live}
-                    className="flex-1 py-4 rounded-2xl gradient-bg text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all"
+                      className="flex-1 py-4 rounded-2xl gradient-bg text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-1"
                   >
                     Live Demo <FaExternalLinkAlt size={14} />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="px-6 py-4 rounded-2xl glass font-bold flex items-center justify-center gap-2 hover:bg-white/10 transition-all"
-                  >
-                    <FaGithub size={20} />
                   </a>
                 </div>
               </div>

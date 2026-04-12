@@ -51,7 +51,7 @@ export default function Experience() {
               className="glass-card p-8 md:p-12 rounded-[2.5rem] flex flex-col md:flex-row gap-8 items-start group"
             >
               <div className="shrink-0">
-                <div className="p-5 rounded-3xl gradient-bg text-white shadow-[0_0_20px_rgba(112,0,255,0.3)] group-hover:scale-110 transition-transform">
+                <div className="p-5 rounded-3xl gradient-bg text-white shadow-[0_0_20px_rgba(112,0,255,0.3)] transition-transform">
                   <FaBriefcase size={32} />
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default function Experience() {
               <div className="flex-1">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
                   <div>
-                    <h3 className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors">{exp.title}</h3>
+                    <h3 className="text-3xl font-bold mb-2 transition-colors">{exp.title}</h3>
                     <p className="text-xl text-slate-400 font-medium">{exp.company}</p>
                   </div>
                   <div className="flex flex-col items-start md:items-end gap-2 text-sm text-slate-500 font-bold uppercase tracking-widest">
