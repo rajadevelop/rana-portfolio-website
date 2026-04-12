@@ -6,37 +6,54 @@ export default function CustomCursor() {
 
   const mouse = useRef({ x: 0, y: 0 });
   const circle = useRef({ x: 0, y: 0 });
+useEffect(() => {
+  const moveMouse = (e: MouseEvent) => {
+    mouse.current.x = e.clientX;
+    mouse.current.y = e.clientY;
+  };
 
-  useEffect(() => {
-    const moveMouse = (e: MouseEvent) => {
-      mouse.current.x = e.clientX;
-      mouse.current.y = e.clientY;
-    };
+  const handleLinkHover = () => {
+    document.body.classList.add("link-hover");
+  };
 
-    window.addEventListener("mousemove", moveMouse);
+  const handleLinkLeave = () => {
+    document.body.classList.remove("link-hover");
+  };
 
-    const animate = () => {
-      // Smooth follow (lerp)
-      circle.current.x += (mouse.current.x - circle.current.x) * 0.1;
-      circle.current.y += (mouse.current.y - circle.current.y) * 0.1;
+  const links = document.querySelectorAll("a, button");
 
-      if (circleRef.current) {
-        circleRef.current.style.transform = `translate(${circle.current.x}px, ${circle.current.y}px)`;
-      }
+  links.forEach((el) => {
+    el.addEventListener("mouseenter", handleLinkHover);
+    el.addEventListener("mouseleave", handleLinkLeave);
+  });
 
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${mouse.current.x}px, ${mouse.current.y}px)`;
-      }
+  window.addEventListener("mousemove", moveMouse);
 
-      requestAnimationFrame(animate);
-    };
+  const animate = () => {
+    circle.current.x += (mouse.current.x - circle.current.x) * 0.1;
+    circle.current.y += (mouse.current.y - circle.current.y) * 0.1;
 
-    animate();
+    if (circleRef.current) {
+      circleRef.current.style.transform = `translate(${circle.current.x}px, ${circle.current.y}px)`;
+    }
 
-    return () => {
-      window.removeEventListener("mousemove", moveMouse);
-    };
-  }, []);
+    if (dotRef.current) {
+      dotRef.current.style.transform = `translate(${mouse.current.x}px, ${mouse.current.y}px)`;
+    }
+
+    requestAnimationFrame(animate);
+  };
+
+  animate();
+
+  return () => {
+    window.removeEventListener("mousemove", moveMouse);
+    links.forEach((el) => {
+      el.removeEventListener("mouseenter", handleLinkHover);
+      el.removeEventListener("mouseleave", handleLinkLeave);
+    });
+  };
+}, []);
 
   return (
     <>

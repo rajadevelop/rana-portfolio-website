@@ -37,28 +37,48 @@
   .bento-grid {
     @apply grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4;
   }
-  .cursor-circle,
-.cursor-dot {
+  * {
+    cursor: none;
+  }
+  
+  .cursor-dot,
+.cursor-circle {
   position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
   z-index: 9999;
+  transition: all 0.20s ease;
 }
-.cursor-circle {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #00d2ff;
+
+/* Default styles */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #00aaff;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+}
+
+.cursor-circle {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #00aaff;
+  border-radius: 50%;
   top: -12px;
   left: -12px;
 }
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: #00d2ff;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+
+/* 🔥 Hover effect (link) */
+body.link-hover .cursor-dot {
+  transform: scale(0);
+  opacity: 0;
+}
+
+body.link-hover .cursor-circle {
+  width: 60px;
+  height: 60px;
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%) scale(1.2);
 }
 }
