@@ -37,4 +37,28 @@
   .bento-grid {
     @apply grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4;
   }
+  .cursor-circle,
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+.cursor-circle {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #00d2ff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  top: -12px;
+  left: -12px;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #00d2ff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
 }
