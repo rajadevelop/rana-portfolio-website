@@ -1,8 +1,15 @@
 import { motion } from "motion/react";
 import { HiArrowRight } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaPhone, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Hero() {
+
+  const socialLinks = [
+    { icon: FaPhone, link: "tel:+918697059241" },
+    { icon: FaEnvelope, link: "mailto:dasrana373@gmail.com" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/rana-das-frontend" },
+  ];
+
   return (
     <section
       id="home"
@@ -61,10 +68,12 @@ export default function Hero() {
               View Projects <span className="group-hover:translate-x-1 transition-transform"><HiArrowRight size={20} /></span>
             </a>
             <div className="flex items-center gap-4">
-              {[FaGithub, FaLinkedin, FaTwitter].map((Icon, i) => (
+              {socialLinks.map(({ icon: Icon, link }, i) => (
                 <motion.a
                   key={i}
-                  href="#"
+                  href={link}
+                  target={link.includes("linkedin") ? "_blank" : "_self"}
+                  rel={link.includes("linkedin") ? "noopener noreferrer" : ""}
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   className="p-4 rounded-full glass hover:text-primary transition-colors"
                 >

@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaPhone,FaGithub, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp , FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   const contactInfo = [
     { icon: <FaEnvelope />, label: "Email", value: "dasrana373@gmail.com", href: "mailto:dasrana373@gmail.com" },
     { icon: <FaPhone />, label: "Phone", value: "+91 8697059241", href: "tel:+918697059241" },
+  ];
+
+  const socialLinks = [
+    { icon: FaWhatsapp, link: "https://wa.me/918697059241?text=Hi%20Rana" },
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/rana-das-frontend" },
+    { icon: FaGithub, link: "https://github.com/dasrana373-commits" },
   ];
 
   return (
@@ -57,8 +63,14 @@ export default function Contact() {
               viewport={{ once: true }}
               className="glass-card p-8 rounded-[2rem] flex justify-around"
             >
-              {[FaGithub, FaLinkedin, FaTwitter].map((Icon, i) => (
-                <a key={i} href="https://github.com/dasrana373-commits" className="p-4 rounded-2xl bg-white/5 text-primary hover:gradient-bg hover:text-white transition-all transform hover:-translate-y-1">
+              {socialLinks.map(({ icon: Icon, link }, i) => (
+                <a
+                  key={i}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-2xl bg-white/5 text-primary hover:gradient-bg hover:text-white transition-all transform hover:-translate-y-1"
+                >
                   <Icon size={24} />
                 </a>
               ))}
