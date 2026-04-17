@@ -6,28 +6,26 @@ export default function CustomCursor() {
 
   const mouse = useRef({ x: 0, y: 0 });
   const circle = useRef({ x: 0, y: 0 });
-useEffect(() => {
+  useEffect(() => {
   const moveMouse = (e: MouseEvent) => {
     mouse.current.x = e.clientX;
     mouse.current.y = e.clientY;
   };
 
-  const handleLinkHover = () => {
-    document.body.classList.add("link-hover");
+  const handleMouseOut = (e: MouseEvent) => {
+    // Mouse left the window
+    if (!e.relatedTarget) {
+      document.body.classList.add("cursor-hidden");
+    }
   };
 
-  const handleLinkLeave = () => {
-    document.body.classList.remove("link-hover");
+  const handleMouseOver = () => {
+    document.body.classList.remove("cursor-hidden");
   };
-
-  const links = document.querySelectorAll("a, button");
-
-  links.forEach((el) => {
-    el.addEventListener("mouseenter", handleLinkHover);
-    el.addEventListener("mouseleave", handleLinkLeave);
-  });
 
   window.addEventListener("mousemove", moveMouse);
+  document.addEventListener("mouseout", handleMouseOut);
+  document.addEventListener("mouseover", handleMouseOver);
 
   const animate = () => {
     circle.current.x += (mouse.current.x - circle.current.x) * 0.1;
@@ -48,10 +46,8 @@ useEffect(() => {
 
   return () => {
     window.removeEventListener("mousemove", moveMouse);
-    links.forEach((el) => {
-      el.removeEventListener("mouseenter", handleLinkHover);
-      el.removeEventListener("mouseleave", handleLinkLeave);
-    });
+    document.removeEventListener("mouseout", handleMouseOut);
+    document.removeEventListener("mouseover", handleMouseOver);
   };
 }, []);
 

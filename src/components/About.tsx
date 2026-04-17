@@ -23,7 +23,7 @@ export default function About() {
           >
             <h3 className="text-3xl font-bold mb-6">My Story</h3>
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
-              Hi, I’m Rana Das, a Website Designer and Frontend Developer with 6+ years of experience in building responsive, user-friendly, and visually appealing websites. I have worked on real-time, production-level projects where I focus on quality, performance, and smooth user experience.
+              Hi, I&#39;m Rana Das, a Website Designer and Frontend Developer with 6+ years of experience in building responsive, user-friendly, and visually appealing websites. I have worked on real-time, production-level projects where I focus on quality, performance, and smooth user experience.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
               I have strong knowledge of modern design tools and frontend technologies, and I always try to write clean and maintainable code. I enjoy creating websites that not only look good but also help businesses grow and build a strong online presence.
@@ -44,7 +44,7 @@ export default function About() {
                 transition={{ delay: i * 0.1 }}
                 className="glass-card p-6 rounded-[2rem] flex flex-col items-center justify-center text-center group"
               >
-                <div className={`text-2xl mb-3 p-3 rounded-2xl bg-linear-to-br ${stat.color} text-white group-hover:scale-110 transition-transform`}>
+                <div className={`text-2xl mb-3 p-3 rounded-2xl bg-linear-to-br ${stat.color} text-white transition-transform`}>
                   {stat.icon}
                 </div>
                 <div className="text-2xl font-black mb-1">{stat.value}</div>

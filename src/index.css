@@ -40,45 +40,35 @@
   * {
     cursor: none;
   }
-  
-  .cursor-dot,
-.cursor-circle {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.20s ease;
-}
+  body.cursor-hidden .cursor-dot,
+  body.cursor-hidden .cursor-circle {
+    opacity: 0;
+    transform: scale(0);
+  }
+  body.cursor-hidden .cursor-circle {
+    transform: scale(0.5);
+  }
+  .cursor-dot, .cursor-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.20s ease;
+  }
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: #00aaff;
+    border-radius: 50%;
+  }
 
-/* Default styles */
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: #00aaff;
-  border-radius: 50%;
-}
-
-.cursor-circle {
-  width: 35px;
-  height: 35px;
-  border: 2px solid #00aaff;
-  border-radius: 50%;
-  top: -12px;
-  left: -12px;
-}
-
-/* 🔥 Hover effect (link) */
-body.link-hover .cursor-dot {
-  transform: scale(0);
-  opacity: 0;
-}
-
-body.link-hover .cursor-circle {
-  width: 60px;
-  height: 60px;
-  border-color: white;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translate(-50%, -50%) scale(1.2);
-}
+  .cursor-circle {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #00aaff;
+    border-radius: 50%;
+    top: -12px;
+    left: -12px;
+  }
 }
