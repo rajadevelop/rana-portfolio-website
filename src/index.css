@@ -54,7 +54,7 @@
     left: 0;
     pointer-events: none;
     z-index: 9999;
-    transition: all 0.20s ease;
+    transition: all 0.10s ease;
   }
   .cursor-dot {
     width: 8px;
@@ -64,11 +64,11 @@
   }
 
   .cursor-circle {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
     border: 2px solid #00aaff;
     border-radius: 50%;
-    top: -12px;
-    left: -12px;
+    top: -13px;
+    left: -13px;
   }
 }
