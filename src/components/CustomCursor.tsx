@@ -6,50 +6,63 @@ export default function CustomCursor() {
 
   const mouse = useRef({ x: 0, y: 0 });
   const circle = useRef({ x: 0, y: 0 });
+
   useEffect(() => {
-  const moveMouse = (e: MouseEvent) => {
-    mouse.current.x = e.clientX;
-    mouse.current.y = e.clientY;
-  };
+    const moveMouse = (e: MouseEvent) => {
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
+    };
 
-  const handleMouseOut = (e: MouseEvent) => {
-    // Mouse left the window
-    if (!e.relatedTarget) {
-      document.body.classList.add("cursor-hidden");
-    }
-  };
+    const handleMouseOut = (e: MouseEvent) => {
+      if (!e.relatedTarget) {
+        document.body.classList.add("cursor-hidden");
+      }
+    };
 
-  const handleMouseOver = () => {
-    document.body.classList.remove("cursor-hidden");
-  };
+    const handleMouseOver = () => {
+      document.body.classList.remove("cursor-hidden");
+    };
 
-  window.addEventListener("mousemove", moveMouse);
-  document.addEventListener("mouseout", handleMouseOut);
-  document.addEventListener("mouseover", handleMouseOver);
+    // 🔥 Detect hover on clickable elements
+    const handlePointerHover = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
 
-  const animate = () => {
-    circle.current.x += (mouse.current.x - circle.current.x) * 0.1;
-    circle.current.y += (mouse.current.y - circle.current.y) * 0.1;
+      if (target.closest("a, button, [role='button'], input, textarea")) {
+        document.body.classList.add("cursor-hover");
+      } else {
+        document.body.classList.remove("cursor-hover");
+      }
+    };
 
-    if (circleRef.current) {
-      circleRef.current.style.transform = `translate(${circle.current.x}px, ${circle.current.y}px)`;
-    }
+    window.addEventListener("mousemove", moveMouse);
+    window.addEventListener("mousemove", handlePointerHover); // 👈 important
+    document.addEventListener("mouseout", handleMouseOut);
+    document.addEventListener("mouseover", handleMouseOver);
 
-    if (dotRef.current) {
-      dotRef.current.style.transform = `translate(${mouse.current.x}px, ${mouse.current.y}px)`;
-    }
+    const animate = () => {
+      circle.current.x += (mouse.current.x - circle.current.x) * 0.1;
+      circle.current.y += (mouse.current.y - circle.current.y) * 0.1;
 
-    requestAnimationFrame(animate);
-  };
+      if (circleRef.current) {
+        circleRef.current.style.transform = `translate(${circle.current.x}px, ${circle.current.y}px)`;
+      }
 
-  animate();
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate(${mouse.current.x}px, ${mouse.current.y}px)`;
+      }
 
-  return () => {
-    window.removeEventListener("mousemove", moveMouse);
-    document.removeEventListener("mouseout", handleMouseOut);
-    document.removeEventListener("mouseover", handleMouseOver);
-  };
-}, []);
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener("mousemove", moveMouse);
+      window.removeEventListener("mousemove", handlePointerHover);
+      document.removeEventListener("mouseout", handleMouseOut);
+      document.removeEventListener("mouseover", handleMouseOver);
+    };
+  }, []);
 
   return (
     <>
