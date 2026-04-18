@@ -1,18 +1,16 @@
 import { motion } from "motion/react";
-import { FaHtml5, FaCss3Alt, FaGithub, FaJs, FaSass, FaReact, FaWordpress, FaSearch, FaPaintBrush } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaGithub, FaJs, FaSass, FaReact, FaWordpress, FaSearch, FaPaintBrush, FaFigma  } from "react-icons/fa";
 import { SiTailwindcss, SiChakraui, SiNextdotjs, SiRedux, SiElementor } from "react-icons/si";
 import { HiOutlineDeviceMobile } from "react-icons/hi";
+import { DiPhotoshop } from "react-icons/di";
 
 const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      { name: "HTML", icon: <FaHtml5 color="#f06529" /> },
-      { name: "CSS", icon: <FaCss3Alt color="#2965f1" /> },
-      { name: "JavaScript", icon: <FaJs color="#f7df1e" /> },
-      { name: "Sass", icon: <FaSass color="#cc6699" /> },
-      { name: "Tailwind", icon: <SiTailwindcss color="#06b6d4" /> },
-      { name: "Chakra UI", icon: <SiChakraui color="#319795" /> },
+      { name: "HTML5", icon: <FaHtml5 color="#f06529" /> },
+      { name: "CSS3", icon: <FaCss3Alt color="#2965f1" /> },
+      { name: "JavaScript (ES6+)", icon: <FaJs color="#f7df1e" /> },
     ],
   },
   {
@@ -24,18 +22,32 @@ const skillCategories = [
     ],
   },
   {
-    title: "CMS & Tools",
+    title: "UI & Styling",
+    skills: [      
+      { name: "Tailwind", icon: <SiTailwindcss color="#06b6d4" /> },
+      { name: "Sass", icon: <FaSass color="#cc6699" /> },
+      { name: "Chakra UI", icon: <SiChakraui color="#319795" /> },
+    ],
+  },
+  {
+    title: "Tools & Platforms:",
     skills: [
+      { name: "Github", icon: <FaGithub color="#bbbbbb" /> },
       { name: "WordPress", icon: <FaWordpress color="#21759b" /> },
       { name: "Elementor", icon: <SiElementor color="#d62828" /> },
-      { name: "Photoshop", icon: <FaPaintBrush color="#31a8ff" /> },
+    ],
+  },
+  {
+    title: "Design Tools",
+    skills: [
+      { name: "Figma", icon: <FaFigma color="#f77d7d" /> },
+      { name: "Adobe Photoshop", icon: <DiPhotoshop color="#2fa3f7" /> },
     ],
   },
   {
     title: "Other",
     skills: [
-      { name: "Responsive", icon: <HiOutlineDeviceMobile color="#00aaff" /> },
-      { name: "Github", icon: <FaGithub color="#7e7e7e" /> },
+      { name: "Responsive", icon: <HiOutlineDeviceMobile color="#a800f7" /> },
       { name: "SEO", icon: <FaSearch color="#4caf50" /> },
     ],
   },
