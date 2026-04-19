@@ -31,7 +31,7 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
             className="inline-block px-4 py-1.5 mb-6 rounded-full glass text-xs font-bold uppercase tracking-widest text-primary"
           >
-            Available for new projects
+            Available for work
           </motion.div>
           
           <motion.h1
