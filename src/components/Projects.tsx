@@ -1,39 +1,39 @@
 import { motion } from "motion/react";
-import { FaExternalLinkAlt, FaGithub, FaCode } from "react-icons/fa";
+import { FaExternalLinkAlt, FaCode } from "react-icons/fa";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Classint ",
     description: "A full-featured online store with cart and payment integration.",
     tech: ["React", "Next.js", "Tailwind", "Redux"],
     image: "https://picsum.photos/seed/ecommerce/800/600",
-    live: "#",
+    live: "https://class-int.netlify.app",
     github: "#",
   },
-  {
-    title: "SaaS Dashboard",
-    description: "Modern analytics dashboard with real-time data visualization.",
-    tech: ["React", "Chakra UI", "Framer Motion", "Recharts"],
-    image: "https://picsum.photos/seed/dashboard/800/600",
-    live: "#",
-    github: "#",
-  },
-  {
-    title: "Portfolio Website",
-    description: "High-end personal portfolio with smooth animations.",
-    tech: ["React", "Vite", "Tailwind", "Motion"],
-    image: "https://picsum.photos/seed/portfolio/800/600",
-    live: "#",
-    github: "#",
-  },
-  {
-    title: "Real Estate App",
-    description: "Property listing and search application with map integration.",
-    tech: ["Next.js", "Google Maps API", "Tailwind"],
-    image: "https://picsum.photos/seed/realestate/800/600",
-    live: "#",
-    github: "#",
-  },
+  // {
+  //   title: "SaaS Dashboard",
+  //   description: "Modern analytics dashboard with real-time data visualization.",
+  //   tech: ["React", "Chakra UI", "Framer Motion", "Recharts"],
+  //   image: "https://picsum.photos/seed/dashboard/800/600",
+  //   live: "#",
+  //   github: "#",
+  // },
+  // {
+  //   title: "Portfolio Website",
+  //   description: "High-end personal portfolio with smooth animations.",
+  //   tech: ["React", "Vite", "Tailwind", "Motion"],
+  //   image: "https://picsum.photos/seed/portfolio/800/600",
+  //   live: "#",
+  //   github: "#",
+  // },
+  // {
+  //   title: "Real Estate App",
+  //   description: "Property listing and search application with map integration.",
+  //   tech: ["Next.js", "Google Maps API", "Tailwind"],
+  //   image: "https://picsum.photos/seed/realestate/800/600",
+  //   live: "#",
+  //   github: "#",
+  // },
 ];
 
 export default function Projects() {
@@ -88,7 +88,7 @@ export default function Projects() {
 
                 <div className="flex gap-4">
                   <a
-                    href={project.live}
+                    href={project.live} target="_blank"
                       className="flex-1 py-4 rounded-2xl gradient-bg text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-1"
                   >
                     Live Demo <FaExternalLinkAlt size={14} />
