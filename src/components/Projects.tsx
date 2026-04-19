@@ -3,21 +3,20 @@ import { FaExternalLinkAlt, FaCode } from "react-icons/fa";
 
 const projects = [
   {
-    title: "Classint ",
-    description: "A full-featured online store with cart and payment integration.",
-    tech: ["React", "Next.js", "Tailwind", "Redux"],
-    image: "https://picsum.photos/seed/ecommerce/800/600",
+    title: "Classint",
+    description: "A modern landing page to start your programming journey. ",
+    tech: ["Bootstrap", "Html", "Css", "Javascript"],
+    image: "classint-banner.png",
     live: "https://class-int.netlify.app",
-    github: "#",
   },
-  // {
-  //   title: "SaaS Dashboard",
-  //   description: "Modern analytics dashboard with real-time data visualization.",
-  //   tech: ["React", "Chakra UI", "Framer Motion", "Recharts"],
-  //   image: "https://picsum.photos/seed/dashboard/800/600",
-  //   live: "#",
-  //   github: "#",
-  // },
+  {
+    title: "CV Stick",
+    description: "Create a professional, ATS-friendly CV in minutes.",
+    tech: ["React", "Chakra UI", "Framer Motion"],
+    image: "coming-soon.png",
+    live: "#",
+    disabled: "true",
+  },
   // {
   //   title: "Portfolio Website",
   //   description: "High-end personal portfolio with smooth animations.",
@@ -85,14 +84,23 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-
                 <div className="flex gap-4">
-                  <a
-                    href={project.live} target="_blank"
+                  {project.disabled ? (
+                    <button
+                      className="flex-1 py-4 rounded-2xl bg-gray-500 text-white font-bold cursor-not-allowed opacity-50"
+                      disabled
+                    >
+                      Coming Soon
+                    </button>
+                  ) : (
+                    <a
+                      href={project.live}
+                      target="_blank"
                       className="flex-1 py-4 rounded-2xl gradient-bg text-white font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-1"
-                  >
-                    Live Demo <FaExternalLinkAlt size={14} />
-                  </a>
+                    >
+                      Live Demo <FaExternalLinkAlt size={14} />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
