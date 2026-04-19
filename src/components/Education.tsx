@@ -12,13 +12,13 @@ const education = [
 
 const certifications = [
   {
-    title: "Project Dynamotion",
-    issuer: "Aptech Bengal",
-    icon: <FaAward />,
-  },
-  {
     title: "Frontend Developer",
     issuer: "Unified Mentor",
+    icon: <FaAward />,
+  }, 
+  {
+    title: "Project Dynamotion",
+    issuer: "Aptech Bengal",
     icon: <FaAward />,
   },
 ];
