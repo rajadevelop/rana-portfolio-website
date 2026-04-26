@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -35,59 +36,82 @@ export default function Navbar() {
   }, [isDark]);
 
   return (
+    <>
     <nav
       className={`fixed top-3 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 transition-all duration-500 rounded-full border-none ${
         isScrolled ? "glass py-3" : "bg-transparent py-5"
       }`}
     >
-      <div className="px-6 flex items-center justify-between">
-        <motion.a
-          href="#home"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="text-xl font-bold gradient-text tracking-tighter"
-        >
-          RANA.DAS
-        </motion.a>
+        <div className="px-4 md:px-6 flex items-center justify-between">
+          <motion.a
+            href="#home"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="text-xl font-bold gradient-text tracking-tighter"
+          >
+            RANA.DAS
+          </motion.a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
-          {navLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link, index) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors"
+              >
+                {link.name}
+              </motion.a>
+            ))}
+            <div className="hidden md:flex">
+              <a
+                href="/rana-das-resume-updated.pdf"
+                download="Rana-Das-CV.pdf"
+                className="group px-4 py-2 rounded-full gradient-bg text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2"
+              >
+                Download CV
+                <span className="group-hover:translate-x-1 transition-transform">
+                  <MdOutlineFileDownload  size={16} />
+                </span>
+              </a>
+            </div>
+            {/* <button
+              onClick={() => setIsDark(!isDark)}
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
             >
-              {link.name}
-            </motion.a>
-          ))}
-          {/* <button
-            onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-full hover:bg-white/10 transition-colors"
-          >
-            {isDark ? <FaSun size={16} /> : <FaMoon size={16} />}
-          </button> */}
-        </div>
+              {isDark ? <FaSun size={16} /> : <FaMoon size={16} />}
+            </button> */}
+          </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-4">
-          {/* <button
-            onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-full hover:bg-white/10 transition-colors"
-          >
-            {isDark ? <FaSun size={18} /> : <FaMoon size={18} />}
-          </button> */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-white"
-          >
-            {isMobileMenuOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
-          </button>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center space-x-4">
+            {/* <button
+              onClick={() => setIsDark(!isDark)}
+              className="p-2 rounded-full hover:bg-white/10 transition-colors"
+            >
+              {isDark ? <FaSun size={18} /> : <FaMoon size={18} />}
+            </button> */}
+             <a
+              href="/rana-das-resume-updated.pdf"
+              download="Rana-Das-CV.pdf"
+              className="group px-4 py-2 rounded-full gradient-bg text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2"
+            >
+              <span className="group-hover:translate-x-1 transition-transform">
+                <MdOutlineFileDownload  size={16} />
+              </span>
+            </a>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-white"
+            >
+              {isMobileMenuOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
+            </button>
+          </div>
+         
         </div>
-      </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -114,5 +138,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
+    </>
   );
 }
