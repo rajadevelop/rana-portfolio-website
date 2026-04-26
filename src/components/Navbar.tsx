@@ -64,22 +64,22 @@ export default function Navbar() {
               {link.name}
             </motion.a>
           ))}
-          <button
+          {/* <button
             onClick={() => setIsDark(!isDark)}
             className="p-2 rounded-full hover:bg-white/10 transition-colors"
           >
             {isDark ? <FaSun size={16} /> : <FaMoon size={16} />}
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <button
+          {/* <button
             onClick={() => setIsDark(!isDark)}
             className="p-2 rounded-full hover:bg-white/10 transition-colors"
           >
             {isDark ? <FaSun size={18} /> : <FaMoon size={18} />}
-          </button>
+          </button> */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 text-white"
@@ -96,7 +96,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full mt-4 glass rounded-3xl overflow-hidden md:hidden"
+            className="absolute top-full left-0 w-full mt-4 bg-black/90 rounded-3xl overflow-hidden md:hidden"
           >
             <div className="px-6 py-8 space-y-4">
               {navLinks.map((link) => (

@@ -37,9 +37,6 @@
   .bento-grid {
     @apply grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4;
   }
-  body {
-    cursor: none;
-  }
   body.cursor-hidden .cursor-dot,
   body.cursor-hidden .cursor-circle {
     opacity: 0;
@@ -84,5 +81,25 @@
     border: none;
     top: -25px;
     left: -25px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    body {
+      cursor: none;
+    }
+    .cursor-dot,
+    .cursor-circle {
+      display: block;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    body {
+      cursor: auto;
+    }
+    .cursor-dot,
+    .cursor-circle {
+      display: none;
+    }
   }
 }
